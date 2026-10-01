@@ -1,0 +1,56 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EduPlus — Plateforme éducative</title>
+<style>
+:root{--p:#2563eb;--d:#0f172a;--bg:#f6f8fc;--card:#fff;--muted:#64748b;--line:#e2e8f0}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Arial;background:var(--bg);color:#14213d}a{text-decoration:none;color:inherit}
+.container{width:min(1150px,92%);margin:auto}header{background:#fffffff0;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:25px;font-weight:900;color:var(--p)}
+nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap}nav a{font-weight:700;font-size:14px}
+.btn{border:0;border-radius:11px;padding:11px 16px;background:var(--p);color:#fff;font-weight:800;cursor:pointer}.btn.alt{background:#e8eefc;color:#1d4ed8}
+.hero{padding:70px 0 45px;background:linear-gradient(135deg,#eff6ff,#fff)}.heroGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+h1{font-size:clamp(40px,6vw,68px);line-height:1.02;margin:12px 0}.lead{font-size:18px;line-height:1.7;color:var(--muted)}
+.panel,.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 10px 30px #0f172a0a}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}section{padding:52px 0}.tag{display:inline-block;background:#dbeafe;color:#1d4ed8;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:900}
+h2{font-size:30px}.muted{color:var(--muted);line-height:1.6}.search,textarea,input{width:100%;padding:14px;border:1px solid var(--line);border-radius:11px;font:inherit}
+.search{margin:10px 0 20px}.assistant{background:var(--d);color:white;border-radius:22px;padding:26px}.assistant p{color:#cbd5e1}.answer{white-space:pre-wrap;background:#1e293b;border-radius:12px;padding:15px;margin-top:14px;display:none}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}.stat{text-align:center;background:#f8fafc;padding:15px;border-radius:12px}.stat b{display:block;font-size:22px}
+footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted)}
+@media(max-width:800px){.heroGrid,.grid{grid-template-columns:1fr}nav{display:none}}
+</style></head><body>
+<header><div class="container nav"><a class="brand" href="#">EduPlus</a><nav><a href="#cours">Cours</a><a href="#ressources">Ressources</a><a href="#exercices">Exercices</a><a href="#ia">Assistant IA</a><a class="btn alt" href="https://wa.me/22871730120?text=Bonjour%20EduPlus" target="_blank">WhatsApp</a></nav></div></header>
+<main>
+<section class="hero"><div class="container heroGrid"><div>
+<div class="tag">APPRENDRE • PRATIQUER • PROGRESSER</div><h1>EduPlus, ton espace d'apprentissage.</h1>
+<p class="lead">Cours, fiches, exercices, corrigés et assistant pédagogique réunis dans une plateforme simple à utiliser.</p>
+<a class="btn" href="#cours">Commencer</a>
+<div class="stats"><div class="stat"><b>24/7</b>Accès</div><div class="stat"><b>+Cours</b>Révision</div><div class="stat"><b>IA</b>Assistant</div></div>
+</div><div class="panel"><h2>Bienvenue 👋</h2><p class="muted">Cette base est prête pour Vercel. Les fonctions avancées seront ajoutées progressivement.</p><p class="muted"><b>Important :</b> la clé IA reste uniquement côté serveur.</p></div></div></section>
+
+<section id="cours"><div class="container"><h2>Cours</h2><p class="muted">Recherche une matière ou une notion.</p><input id="search" class="search" placeholder="Ex. dérivée, Gauss, génétique..." oninput="filterCards()">
+<div class="grid" id="courses">
+<div class="card searchable"><span class="tag">Mathématiques</span><h3>Analyse</h3><p class="muted">Fonctions, limites, dérivées, intégrales et développements limités.</p><button class="btn alt" onclick="info('Mathématiques — Analyse')">Ouvrir</button></div>
+<div class="card searchable"><span class="tag">Mathématiques</span><h3>Algèbre</h3><p class="muted">Matrices, systèmes, espaces vectoriels et méthode de Gauss.</p><button class="btn alt" onclick="info('Mathématiques — Algèbre')">Ouvrir</button></div>
+<div class="card searchable"><span class="tag">Physique</span><h3>Mécanique & électricité</h3><p class="muted">Forces, énergie, courant, tension, résistance et puissance.</p><button class="btn alt" onclick="info('Physique')">Ouvrir</button></div>
+<div class="card searchable"><span class="tag">Économie</span><h3>Macroéconomie</h3><p class="muted">PIB, multiplicateur, politique budgétaire et modèles macroéconomiques.</p><button class="btn alt" onclick="info('Macroéconomie')">Ouvrir</button></div>
+<div class="card searchable"><span class="tag">Biologie</span><h3>Génétique</h3><p class="muted">ADN, gènes, chromosomes, transmission et mutations.</p><button class="btn alt" onclick="info('Biologie — Génétique')">Ouvrir</button></div>
+<div class="card searchable"><span class="tag">Terminale</span><h3>Révisions</h3><p class="muted">Fiches synthétiques et exercices types avec corrigés détaillés.</p><button class="btn alt" onclick="info('Révisions Terminale')">Ouvrir</button></div>
+</div></div></section>
+
+<section id="ressources"><div class="container"><h2>Ressources</h2><div class="panel">
+<p><b>📘 Fiches de cours</b> — emplacement prévu pour tes PDF.</p><p><b>📝 Exercices</b> — exercices par chapitre et niveau.</p><p><b>✅ Corrigés</b> — solutions détaillées et démonstrations.</p><p><b>🔎 Recherche</b> — recherche instantanée dans les matières.</p></div></div></section>
+
+<section id="exercices"><div class="container"><h2>Exercices</h2><div class="grid">
+<div class="card"><span class="tag">Maths</span><h3>Équation du second degré</h3><p class="muted">Résoudre ax² + bx + c = 0.</p><button class="btn" onclick="info('Exercice — second degré')">Commencer</button></div>
+<div class="card"><span class="tag">Algèbre</span><h3>Méthode de Gauss</h3><p class="muted">Résoudre un système étape par étape.</p><button class="btn" onclick="info('Exercice — Gauss')">Commencer</button></div>
+<div class="card"><span class="tag">Corrigé</span><h3>Corrigé détaillé</h3><p class="muted">Méthode, calculs et conclusion.</p><button class="btn" onclick="info('Corrigés détaillés')">Ouvrir</button></div>
+</div></div></section>
+
+<section id="ia"><div class="container"><div class="assistant"><h2>Assistant pédagogique EduPlus</h2><p>Pose une question. L'IA sera active dès que OPENAI_API_KEY sera configurée sur Vercel.</p>
+<textarea id="question" rows="5" placeholder="Ex. Explique-moi le théorème de Gauss avec un exemple."></textarea><br><br><button class="btn" onclick="askAI()">Demander une explication</button><div id="answer" class="answer"></div></div></div></section>
+</main>
+<footer><div class="container"><b>EduPlus</b> — Plateforme éducative · <a href="https://wa.me/22871730120?text=Bonjour%20EduPlus" target="_blank">WhatsApp</a></div></footer>
+<script>
+function info(x){alert(x+"\n\nCette partie est prête à recevoir le contenu EduPlus.")}
+function filterCards(){let q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.searchable').forEach(x=>x.style.display=x.innerText.toLowerCase().includes(q)?'block':'none')}
+async function askAI(){let q=document.getElementById('question').value.trim(),a=document.getElementById('answer');a.style.display='block';if(!q){a.textContent='Écris une question.';return}a.textContent='Réponse en cours...';try{let r=await fetch('/api/ai',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q})});let d=await r.json();if(!r.ok)throw Error(d.error);a.textContent=d.answer||'Réponse vide.'}catch(e){a.textContent='L’assistant IA n’est pas encore activé. Configure OPENAI_API_KEY dans Vercel.'}}
+</script></body></html>

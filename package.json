@@ -1,0 +1,10 @@
+{
+  "name": "eduplus",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "EduPlus - plateforme éducative prête pour Vercel",
+  "engines": {
+    "node": "22.x"
+  }
+}
